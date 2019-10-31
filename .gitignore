@@ -1,0 +1,14 @@
+# Standard
+.env
+node_modules
+.DS_STORE
+
+# Created with `Graph Codegen`
+src/types
+dist
+
+# GENERATED Files -- Created with `yarn codegen`
+generated
+
+# BUILD Files -- Created with `yarn build`
+build

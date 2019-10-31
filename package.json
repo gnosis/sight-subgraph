@@ -1,0 +1,16 @@
+{
+  "name": "sight",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/sight",
+    "create-local": "graph create --node http://localhost:8020/ gnosis/sight",
+    "remove-local": "graph remove --node http://localhost:8020/ gnosis/sight",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 gnosis/sight"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.15.3",
+    "@graphprotocol/graph-ts": "0.15.0"
+  }
+}
