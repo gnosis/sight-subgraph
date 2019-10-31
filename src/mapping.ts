@@ -1,6 +1,6 @@
 import { BigInt } from "@graphprotocol/graph-ts"
 import {
-  Contract,
+  LMSRMarketMaker,
   AMMCreated,
   AMMPaused,
   AMMResumed,
@@ -10,7 +10,7 @@ import {
   AMMFeeWithdrawal,
   AMMOutcomeTokenTrade,
   OwnershipTransferred
-} from "../generated/Contract/Contract"
+} from "../generated/Contract/LMSRMarketMaker"
 import { ExampleEntity } from "../generated/schema"
 import { OutcomeTokenTrade } from "../generated/schema"
 
