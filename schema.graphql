@@ -1,13 +1,15 @@
-type ExampleEntity @entity {
-  id: ID!
-  count: BigInt!
-  initialFunding: BigInt! # uint256
-}
-
 type OutcomeTokenTrade @entity {
   id: ID!
   transactor: Bytes
   outcomeTokenAmounts: [BigInt!]!
   outcomeTokenNetCost: BigInt
   marketFees: BigInt
+}
+
+# TODO: Define all event fields
+type LmsrMarketMaker @entity {
+  id: ID!
+  count: BigInt!
+  creator: Bytes! # address
+  lmsrMarketMaker: Bytes! # address
 }
