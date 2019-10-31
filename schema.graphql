@@ -7,7 +7,7 @@ type OutcomeTokenTrade @entity {
 }
 
 # TODO: Define all event fields
-type LmsrMarketMaker @entity {
+type MarketMaker @entity {
   id: ID!
   count: BigInt!
   creator: Bytes! # address

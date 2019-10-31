@@ -3,10 +3,38 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: LMSRMarketMaker
+    name: LMSRMarketMakerFactory
     network: mainnet
     source:
-      address: "0x6F98F4a9E6ae012D176d498c168a99343941f920"
+      address: "0x37186b5d78EbB1f37bC56e5dCa7f18aB98256C4B"
+      abi: LMSRMarketMakerFactory
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - LMSRMarketMakerCreation
+        - OwnershipTransferred
+        - AMMCreated
+        - CloneCreated
+      abis:
+        - name: LMSRMarketMakerFactory
+          file: ./abis/LMSRMarketMakerFactory.json
+      eventHandlers:
+        - event: LMSRMarketMakerCreation(indexed address,address,address,address,bytes32[],uint64,uint256)
+          handler: handleLMSRMarketMakerCreation
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: AMMCreated(uint256)
+          handler: handleAMMCreated
+        - event: CloneCreated(indexed address,address)
+          handler: handleCloneCreated
+      file: ./src/LMSRMarketMakerFactoryMapping.ts
+templates:
+  - name: LMSRMarketMaker
+    kind: ethereum/contract
+    network: mainnet
+    source:
       abi: LMSRMarketMaker
     mapping:
       kind: ethereum/events
@@ -45,31 +73,3 @@ dataSources:
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
       file: ./src/LMSRMarketMakerMapping.ts
-  - kind: ethereum/contract
-    name: LMSRMarketMakerFactory
-    network: mainnet
-    source:
-      address: "0x37186b5d78EbB1f37bC56e5dCa7f18aB98256C4B"
-      abi: LMSRMarketMakerFactory
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.3
-      language: wasm/assemblyscript
-      entities:
-        - LMSRMarketMakerCreation
-        - OwnershipTransferred
-        - AMMCreated
-        - CloneCreated
-      abis:
-        - name: LMSRMarketMakerFactory
-          file: ./abis/LMSRMarketMakerFactory.json
-      eventHandlers:
-        - event: LMSRMarketMakerCreation(indexed address,address,address,address,bytes32[],uint64,uint256)
-          handler: handleLMSRMarketMakerCreation
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
-        - event: AMMCreated(uint256)
-          handler: handleAMMCreated
-        - event: CloneCreated(indexed address,address)
-          handler: handleCloneCreated
-      file: ./src/LMSRMarketMakerFactoryMapping.ts

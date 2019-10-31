@@ -10,7 +10,7 @@ import {
   AMMFeeWithdrawal,
   AMMOutcomeTokenTrade,
   OwnershipTransferred
-} from "../generated/LMSRMarketMaker/LMSRMarketMaker"
+} from "../generated/templates/LMSRMarketMaker/LMSRMarketMaker"
 import { OutcomeTokenTrade } from "../generated/schema"
 
 export function handleAMMCreated(event: AMMCreated): void {}
