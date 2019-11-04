@@ -1,10 +1,10 @@
 type OutcomeTokenTrade @entity {
   id: ID!
   count: BigInt!
-  transactor: Bytes
+  transactor: Bytes!
   outcomeTokenAmounts: [BigInt!]!
-  outcomeTokenNetCost: BigInt
-  marketFees: BigInt
+  outcomeTokenNetCost: BigInt!
+  marketFees: BigInt!
 }
 
 type MarketMaker @entity {
