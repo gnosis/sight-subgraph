@@ -1,5 +1,6 @@
 type OutcomeTokenTrade @entity {
   id: ID!
+  count: BigInt!
   transactor: Bytes
   outcomeTokenAmounts: [BigInt!]!
   outcomeTokenNetCost: BigInt
