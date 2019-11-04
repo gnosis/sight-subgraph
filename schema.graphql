@@ -5,6 +5,8 @@ type OutcomeTokenTrade @entity {
   outcomeTokenAmounts: [BigInt!]!
   outcomeTokenNetCost: BigInt!
   marketFees: BigInt!
+  blockTimestamp: BigInt! # To be easier to sort trades
+  blockNumber: BigInt!
 }
 
 type MarketMaker @entity {

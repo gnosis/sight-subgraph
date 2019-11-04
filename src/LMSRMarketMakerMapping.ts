@@ -60,6 +60,10 @@ export function handleAMMOutcomeTokenTrade(event: AMMOutcomeTokenTrade): void {
   entity.outcomeTokenAmounts = event.params.outcomeTokenAmounts
   entity.outcomeTokenNetCost = event.params.outcomeTokenNetCost
   entity.marketFees = event.params.marketFees
+
+  // To be easier to sort trades
+  entity.blockNumber = event.block.number
+  entity.blockTimestamp = event.block.timestamp
   entity.save()
 }
 
