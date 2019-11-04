@@ -7,10 +7,14 @@ type OutcomeTokenTrade @entity {
   marketFees: BigInt
 }
 
-# TODO: Define all event fields
 type MarketMaker @entity {
   id: ID!
   count: BigInt!
   creator: Bytes! # address
   lmsrMarketMaker: Bytes! # address
+  pmSystem: Bytes! # address
+  collateralToken: Bytes! # address
+  conditionIds: [Bytes!]!
+  fee: BigInt!
+  funding: BigInt!
 }

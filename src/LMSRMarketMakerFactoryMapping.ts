@@ -39,6 +39,11 @@ export function handleLMSRMarketMakerCreation(event: LMSRMarketMakerCreation): v
 
   entity.creator = event.params.creator
   entity.lmsrMarketMaker = event.params.lmsrMarketMaker
+  entity.pmSystem = event.params.pmSystem
+  entity.collateralToken = event.params.collateralToken
+  entity.conditionIds = event.params.conditionIds
+  entity.fee = event.params.fee
+  entity.funding = event.params.funding
 
   entity.save()
 
