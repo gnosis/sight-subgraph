@@ -61,6 +61,19 @@ export function handleAMMOutcomeTokenTrade(event: AMMOutcomeTokenTrade): void {
   entity.outcomeTokenNetCost = event.params.outcomeTokenNetCost
   entity.marketFees = event.params.marketFees
 
+  let lmsrMarketMakercontract = LMSRMarketMaker.bind(event.address)
+  // Get the outcome slots quantity
+  entity.outcomeSlotCount = lmsrMarketMakercontract.atomicOutcomeSlotCount()
+  // Use outcomeSlotCountI32:
+  // Array constructor uses i32 type instead of BigInt
+  // Operator '<' cannot be applied to types 'i32' and '~lib/@graphprotocol/graph-ts/index/BigInt
+  let outcomeSlotCountI32 = entity.outcomeSlotCount.toI32()
+  let marketMakerMarginalPrices = new Array<BigInt>(outcomeSlotCountI32);
+  for (let outcomeSlotIndex = 0; outcomeSlotIndex < outcomeSlotCountI32; ++outcomeSlotIndex) {
+    marketMakerMarginalPrices[outcomeSlotIndex] = lmsrMarketMakercontract.calcMarginalPrice(outcomeSlotIndex);
+  }
+  entity.marketMakerMarginalPrices = marketMakerMarginalPrices
+
   // To be easier to sort trades
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
