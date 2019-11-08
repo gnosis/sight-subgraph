@@ -74,6 +74,7 @@ export function handleAMMOutcomeTokenTrade(event: AMMOutcomeTokenTrade): void {
   }
   entity.marketMakerMarginalPrices = marketMakerMarginalPrices
 
+  entity.lmsrMarketMaker = event.transaction.to
   // To be easier to sort trades
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
