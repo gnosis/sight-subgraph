@@ -75,9 +75,9 @@ export function handleAMMOutcomeTokenTrade(event: AMMOutcomeTokenTrade): void {
   entity.marketMakerMarginalPrices = marketMakerMarginalPrices
 
   // Market maker address
-  entity.lmsrMarketMaker = event.transaction.to
+  entity.marketMaker = event.transaction.to
   // Market maker owner
-  entity.lmsrMarketMakerOwner = lmsrMarketMakercontract.owner()
+  entity.marketMakerOwner = lmsrMarketMakercontract.owner()
 
   // To be easier to sort trades
   entity.blockNumber = event.block.number

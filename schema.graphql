@@ -7,8 +7,8 @@ type OutcomeTokenTrade @entity {
   marketFees: BigInt!
   outcomeSlotCount: BigInt
   marketMakerMarginalPrices: [BigInt!]!
-  lmsrMarketMaker: Bytes
-  lmsrMarketMakerOwner: Bytes!
+  marketMaker: Bytes
+  marketMakerOwner: Bytes!
   blockTimestamp: BigInt! # To be easier to sort trades
   blockNumber: BigInt!
 }
@@ -17,7 +17,7 @@ type MarketMaker @entity {
   id: ID!
   count: BigInt!
   creator: Bytes! # address
-  lmsrMarketMaker: Bytes! # address
+  marketMaker: Bytes! # address
   pmSystem: Bytes! # address
   collateralToken: Bytes! # address
   conditionIds: [Bytes!]!

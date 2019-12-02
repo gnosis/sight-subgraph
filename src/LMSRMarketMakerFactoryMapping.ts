@@ -38,7 +38,7 @@ export function handleLMSRMarketMakerCreation(event: LMSRMarketMakerCreation): v
   entity.count = entity.count + BigInt.fromI32(1)
 
   entity.creator = event.params.creator
-  entity.lmsrMarketMaker = event.params.lmsrMarketMaker
+  entity.marketMaker = event.params.lmsrMarketMaker
   entity.pmSystem = event.params.pmSystem
   entity.collateralToken = event.params.collateralToken
   entity.conditionIds = event.params.conditionIds
