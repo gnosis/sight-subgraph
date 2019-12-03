@@ -12,3 +12,6 @@ generated
 
 # BUILD Files -- Created with `yarn build`
 build
+
+# SUBGRAPH file. Because it's generated per each network
+subgraph.yaml

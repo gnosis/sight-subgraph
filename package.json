@@ -2,15 +2,21 @@
   "name": "sight",
   "license": "UNLICENSED",
   "scripts": {
-    "codegen": "graph codegen",
-    "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/sight",
     "create-local": "graph create --node http://localhost:8020/ gnosis/sight",
     "remove-local": "graph remove --node http://localhost:8020/ gnosis/sight",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 gnosis/sight"
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 gnosis/sight",
+    "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:rinkeby": "mustache config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy:mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/sight",
+    "deploy:rinkeby": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/sight-rinkeby",
+    "build-deploy:mainnet": "npm run prepare:mainnet; npm run codegen; npm run build; npm run deploy:mainnet; rm subgraph.yaml",
+    "build-deploy:rinkeby": "npm run prepare:rinkeby; npm run codegen; npm run build; npm run deploy:rinkeby; rm subgraph.yaml"
   },
-  "dependencies": {
+  "devDependencies": {
     "@graphprotocol/graph-cli": "0.15.3",
-    "@graphprotocol/graph-ts": "0.15.0"
+    "@graphprotocol/graph-ts": "0.15.0",
+    "mustache": "^3.1.0"
   }
 }

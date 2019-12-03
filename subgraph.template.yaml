@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: LMSRMarketMakerFactory
-    network: mainnet
+    network: {{network}}
     source:
-      address: "0x37186b5d78EbB1f37bC56e5dCa7f18aB98256C4B"
+      address: "{{lmsrMarketMakerFactoryAddress}}"
       abi: LMSRMarketMakerFactory
     mapping:
       kind: ethereum/events
