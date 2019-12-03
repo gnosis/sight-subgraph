@@ -47,7 +47,7 @@ export function handleAMMOutcomeTokenTrade(event: AMMOutcomeTokenTrade): void {
      )
   } else {
         // Show an error if there is already an AMMOutcomeTokenTrade with the same ID
-        log.error('We are trying to index a "Outcome Token trade" that is already indexed. Tx_hash: {}',
+        log.error('Trying to index a "Outcome Token trade" that is already indexed. Tx_hash: {}',
           [
             event.transaction.hash.toHex()
           ]

@@ -28,7 +28,7 @@ export function handleLMSRMarketMakerCreation(event: LMSRMarketMakerCreation): v
          )
   } else {
     // Show an error if there is already an indexed Market Maker with the same ID
-    log.error('We are trying to index a "LMSR Market Maker" address that is already indexed: {}',
+    log.error('Trying to index a "LMSR Market Maker" address that is already indexed: {}',
               [
                 event.params.lmsrMarketMaker.toHexString()
               ]
