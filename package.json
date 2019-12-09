@@ -1,16 +1,16 @@
 {
-  "name": "sight",
+  "name": "conditional-tokens",
   "license": "UNLICENSED",
   "scripts": {
-    "create-local": "graph create --node http://localhost:8020/ gnosis/sight",
-    "remove-local": "graph remove --node http://localhost:8020/ gnosis/sight",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 gnosis/sight",
+    "create-local": "graph create --node http://localhost:8020/ gnosis/conditional-tokens",
+    "remove-local": "graph remove --node http://localhost:8020/ gnosis/conditional-tokens",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 gnosis/conditional-tokens",
     "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
     "prepare:rinkeby": "mustache config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy:mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/sight",
-    "deploy:rinkeby": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/sight-rinkeby",
+    "deploy:mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/conditional-tokens",
+    "deploy:rinkeby": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/conditional-tokens-rinkeby",
     "build-deploy:mainnet": "npm run prepare:mainnet; npm run codegen; npm run build; npm run deploy:mainnet; rm subgraph.yaml",
     "build-deploy:rinkeby": "npm run prepare:rinkeby; npm run codegen; npm run build; npm run deploy:rinkeby; rm subgraph.yaml"
   },
