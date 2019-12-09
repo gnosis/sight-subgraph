@@ -1,6 +1,6 @@
-# Sight Subgraph
+# Conditional Tokens Subgraph
 
-Subgraph for Gnosis Sight Markets
+Subgraph (thegraph.com) for Conditional Tokens platform
 
 ---
 
