@@ -21,7 +21,7 @@ export function handleLMSRMarketMakerCreation(event: LMSRMarketMakerCreation): v
 
     // Entity fields can be set using simple assignments
     entity.count = BigInt.fromI32(0)
-    log.info('Market maker indexed: {}',
+    log.info('LMSR Market maker indexed: {}',
           [
             event.params.lmsrMarketMaker.toHexString()
           ]
