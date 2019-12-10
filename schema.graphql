@@ -11,6 +11,7 @@ type OutcomeTokenTrade @entity {
   marketMakerOwner: Bytes!
   blockTimestamp: BigInt! # To be easier to sort trades
   blockNumber: BigInt!
+  transactionHash: Bytes!
 }
 
 type MarketMaker @entity {

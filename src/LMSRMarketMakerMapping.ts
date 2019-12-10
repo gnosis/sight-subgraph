@@ -82,6 +82,7 @@ export function handleAMMOutcomeTokenTrade(event: AMMOutcomeTokenTrade): void {
   // To be easier to sort trades
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
+  entity.transactionHash = event.transaction.hash
   entity.save()
 }
 
