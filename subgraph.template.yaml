@@ -33,7 +33,7 @@ dataSources:
 templates:
   - name: LMSRMarketMaker
     kind: ethereum/contract
-    network: mainnet
+    network: {{network}}
     source:
       abi: LMSRMarketMaker
     mapping:
