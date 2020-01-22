@@ -15,8 +15,8 @@
     "build-deploy:rinkeby": "npm run prepare:rinkeby; npm run codegen; npm run build; npm run deploy:rinkeby; rm subgraph.yaml"
   },
   "devDependencies": {
-    "@graphprotocol/graph-cli": "0.15.3",
-    "@graphprotocol/graph-ts": "0.15.0",
+    "@graphprotocol/graph-cli": "0.17.1",
+    "@graphprotocol/graph-ts": "0.17.0",
     "mustache": "^3.1.0"
   }
 }
