@@ -1,4 +1,5 @@
 {
   "network": "rinkeby",
-  "lmsrMarketMakerFactoryAddress": "0x4Df2a4641066bc2F971efd6E33A1bdE537C6478F"
+  "oldLMSRMarketMakerFactoryAddress": "0x4Df2a4641066bc2F971efd6E33A1bdE537C6478F",
+  "lmsrMarketMakerFactoryAddress": "0x03Ce050DAEB28021086Bf8e9B7843d6212c05F7B"
 }

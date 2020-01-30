@@ -1,4 +1,5 @@
 {
   "network": "mainnet",
-  "lmsrMarketMakerFactoryAddress": "0x37186b5d78EbB1f37bC56e5dCa7f18aB98256C4B"
+  "oldLMSRMarketMakerFactoryAddress": "0x37186b5d78EbB1f37bC56e5dCa7f18aB98256C4B",
+  "lmsrMarketMakerFactoryAddress": "0x578138C6211913c3fb23BfB8a7C9D220882d1a50"
 }
