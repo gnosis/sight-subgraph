@@ -4,6 +4,7 @@ type OutcomeTokenTrade @entity {
   transactor: Bytes!
   outcomeTokenAmounts: [BigInt!]!
   outcomeTokenNetCost: BigInt!
+  collateralToken: Bytes! # address
   marketFees: BigInt!
   outcomeSlotCount: BigInt
   marketMakerMarginalPrices: [BigInt!]!

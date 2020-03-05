@@ -78,6 +78,8 @@ export function handleAMMOutcomeTokenTrade(event: AMMOutcomeTokenTrade): void {
   entity.marketMaker = event.address
   // Market maker owner
   entity.marketMakerOwner = lmsrMarketMakercontract.owner()
+  // Market maker collateral token
+  entity.collateralToken = lmsrMarketMakercontract.collateralToken()
 
   // To be easier to sort trades
   entity.blockNumber = event.block.number
