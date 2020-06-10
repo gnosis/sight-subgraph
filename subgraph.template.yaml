@@ -2,6 +2,8 @@ specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
+# Generate oldMarketMaker datasource if it is defined
+{{#oldLMSRMarketMakerFactoryAddress}}
   - kind: ethereum/contract
     name: OldLMSRMarketMakerFactory
     network: {{network}}
@@ -30,6 +32,7 @@ dataSources:
         - event: CloneCreated(indexed address,address)
           handler: handleCloneCreated
       file: ./src/LMSRMarketMakerFactoryMapping.ts
+{{/oldLMSRMarketMakerFactoryAddress}}
   - kind: ethereum/contract
     name: LMSRMarketMakerFactory
     network: {{network}}

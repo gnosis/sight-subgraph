@@ -5,14 +5,17 @@
     "create-local": "graph create --node http://localhost:8020/ gnosis/conditional-tokens",
     "remove-local": "graph remove --node http://localhost:8020/ gnosis/conditional-tokens",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 gnosis/conditional-tokens",
-    "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
-    "prepare:rinkeby": "mustache config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:mainnet-prod": "mustache config/mainnet-prod.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:mainnet-test": "mustache config/mainnet-test.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:rinkeby-test": "mustache config/rinkeby-test.json subgraph.template.yaml > subgraph.yaml",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy:mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/conditional-tokens",
-    "deploy:rinkeby": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/conditional-tokens-rinkeby",
-    "build-deploy:mainnet": "npm run prepare:mainnet; npm run codegen; npm run build; npm run deploy:mainnet; rm subgraph.yaml",
-    "build-deploy:rinkeby": "npm run prepare:rinkeby; npm run codegen; npm run build; npm run deploy:rinkeby; rm subgraph.yaml"
+    "deploy:mainnet-prod": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/conditional-tokens",
+    "deploy:mainnet-test": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/conditional-tokens-mainnet-test",
+    "deploy:rinkeby-test": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gnosis/conditional-tokens-rinkeby",
+    "build-deploy:mainnet-prod": "npm run prepare:mainnet-prod; npm run codegen; npm run build; npm run deploy:mainnet-prod; rm subgraph.yaml",
+    "build-deploy:mainnet-test": "npm run prepare:mainnet-test; npm run codegen; npm run build; npm run deploy:mainnet-test; rm subgraph.yaml",
+    "build-deploy:rinkeby-test": "npm run prepare:rinkeby-test; npm run codegen; npm run build; npm run deploy:rinkeby-test; rm subgraph.yaml"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "0.17.1",
